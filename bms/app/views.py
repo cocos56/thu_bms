@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.http import JsonResponse
 from app.models import Book
 
 
@@ -20,3 +21,16 @@ def init_database(request):
         book_list.append(b)
     Book.objects.bulk_create(book_list)
     return HttpResponse('成功')
+
+
+def get_books_info(request):
+    req = dict(request.GET)
+    page = int(req['page'][0])
+    size = int(req['size'][0])
+    books_info = []
+    for i in range((page-1)*size+1, page*size+1):
+        b = Book.objects.get(id=i)
+        books_info.append((b.id, b.name, b.author, b.publisher, b.price, b.number))
+    return JsonResponse({
+        'books_info': books_info
+    })
