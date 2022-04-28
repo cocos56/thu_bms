@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
     path('/', views.index),
-    path('', views.index)
+    path('', views.index),
+    path('init_database', views.init_database)
 ]
