@@ -23,5 +23,5 @@ urlpatterns = [
     path('/', views.index),
     path('', views.index),
     path('init_database', views.init_database),
-    path('get_books_info', views.get_books_info)
+    path('books_info', views.books_info)
 ]

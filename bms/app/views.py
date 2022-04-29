@@ -23,14 +23,21 @@ def init_database(request):
     return HttpResponse('成功')
 
 
-def get_books_info(request):
-    req = dict(request.GET)
-    page = int(req['page'][0])
-    size = int(req['size'][0])
-    books_info = []
-    for i in range((page-1)*size+1, page*size+1):
-        b = Book.objects.get(id=i)
-        books_info.append((b.id, b.name, b.author, b.publisher, b.price, b.number))
-    return JsonResponse({
-        'books_info': books_info
-    })
+def books_info(request):
+    if request.method == 'POST':  # 增加
+        pass
+    elif request.method == 'DELETE':  # 删除
+        pass
+    elif request.method == 'PUT':  # 修改
+        pass
+    elif request.method == 'GET':  # 查找
+        req = dict(request.GET)
+        page = int(req['page'][0])
+        size = int(req['size'][0])
+        _books_info = []
+        for i in range((page - 1) * size + 1, page * size + 1):
+            b = Book.objects.get(id=i)
+            _books_info.append((b.id, b.name, b.author, b.publisher, b.price, b.number))
+        return JsonResponse({
+            'books_info': _books_info
+        })
