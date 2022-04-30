@@ -21,7 +21,7 @@ def init_database(request):
         b = Book(id=i, name='%d红楼梦' % i, author='曹雪芹', publisher='人民文学出版社', price=59.7, number=30)
         book_list.append(b)
     Book.objects.bulk_create(book_list)
-    return HttpResponse('成功')
+    return HttpResponse('初始化数据库成功')
 
 
 def books_info(request):
