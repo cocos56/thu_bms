@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
 from app.models import Book
+import json
 
 
 # Create your views here.
@@ -25,7 +26,10 @@ def init_database(request):
 
 def books_info(request):
     if request.method == 'POST':  # 增加
-        pass
+        data = json.loads(request.body)
+        Book(name=data['name'], author=data['author'], publisher=data['publisher'], price=data['price'],
+             number=data['number']).save()
+        return HttpResponse('添加图书成功')
     elif request.method == 'DELETE':  # 删除
         pass
     elif request.method == 'PUT':  # 修改
