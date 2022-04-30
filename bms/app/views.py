@@ -31,7 +31,8 @@ def books_info(request):
              number=data['number']).save()
         return HttpResponse('添加图书成功')
     elif request.method == 'DELETE':  # 删除
-        pass
+        Book(id=json.loads(request.body)['id']).delete()
+        return HttpResponse('删除图书成功')
     elif request.method == 'PUT':  # 修改
         pass
     elif request.method == 'GET':  # 查找
