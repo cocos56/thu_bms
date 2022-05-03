@@ -7,9 +7,18 @@
 * Pycharm Professional 2021.3.3
 * Django 4.0.4
 * SQLite3
+
+# 2. 创建项目
+安装Django
 ```bash
 pip install django
+```
+创建Django项目
+```bash
 django-admin.exe startproject bms
+```
+创建Django项目里的App
+```bash
 python .\manage.py startapp app
 ```
 
