@@ -1,6 +1,12 @@
 该仓库仅为测试demo
 
-使用Python3+Django+SQLite3实现：
+# 1. 开发环境
+
+* Windows 10专业版 版本21H2（操作系统内部版本 19044.1645）
+* Python 3.10.4
+* Pycharm Professional 2021.3.3
+* Django 4.0.4
+* SQLite3
 ```bash
 pip install django
 django-admin.exe startproject bms
