@@ -7,6 +7,11 @@ django-admin.exe startproject bms
 python .\manage.py startapp app
 ```
 
+启动：
+```bash
+python .\manage.py runserver
+```
+
 先初始化数据库：
 ```py
 py.exe .\manage.py makemigrations
