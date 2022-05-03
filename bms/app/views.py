@@ -34,7 +34,15 @@ def books_info(request):
         Book(id=json.loads(request.body)['id']).delete()
         return HttpResponse('删除图书成功')
     elif request.method == 'PUT':  # 修改
-        pass
+        data = json.loads(request.body)
+        book_obj = Book.objects.get(id=data['id'])
+        book_obj.name = data['name']
+        book_obj.author = data['author']
+        book_obj.publisher = data['publisher']
+        book_obj.price = data['price']
+        book_obj.number = data['number']
+        book_obj.save()
+        return HttpResponse('修改图书信息成功')
     elif request.method == 'GET':  # 查找
         req = dict(request.GET)
         page = int(req['page'][0])
