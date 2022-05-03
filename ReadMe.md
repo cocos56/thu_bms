@@ -7,6 +7,7 @@
 * Pycharm Professional 2021.3.3
 * Django 4.0.4
 * SQLite3
+* Postman 9.16.0
 
 # 2. 创建项目
 
