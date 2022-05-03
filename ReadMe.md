@@ -34,7 +34,7 @@ py.exe .\manage.py migrate
 ```bash
 pip install django
 ```
-启动Django服务：
+启动Django服务，先进入`bms`目录，然后执行：
 ```bash
 python .\manage.py runserver
 ```
