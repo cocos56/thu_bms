@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Book(models.Model):
+    objects = models.Manager()  # 避免后续IDE找不到objects属性
     # id = models.IntegerField() # 自动创建
     name = models.CharField(max_length=256)
     author = models.CharField(max_length=128)
