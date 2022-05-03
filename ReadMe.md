@@ -9,30 +9,39 @@
 * SQLite3
 
 # 2. 创建项目
-安装Django
+
+安装Django：
 ```bash
 pip install django
 ```
-创建Django项目
+创建Django项目：
 ```bash
 django-admin.exe startproject bms
 ```
-创建Django项目里的App
+创建Django项目里的App：
 ```bash
 python .\manage.py startapp app
 ```
-
-启动：
-```bash
-python .\manage.py runserver
-```
-
-先初始化数据库：
+初始化数据库：
 ```py
 py.exe .\manage.py makemigrations
 py.exe .\manage.py migrate
 ```
-再插入50万条数据
+
+# 3. 启动项目
+
+安装Django：
+```bash
+pip install django
+```
+启动Django服务：
+```bash
+python .\manage.py runserver
+```
+
+# 4. 使用项目
+
+插入50万条数据：
 http://127.0.0.1:8000/init_database
 
 获取第几页的数据（page是页数，size是每页展示多少条数据）：
