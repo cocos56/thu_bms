@@ -22,17 +22,17 @@
     ```bash
     python .\manage.py startapp app
     ```
-4. 初始化数据库：
-    ```py
-    py.exe .\manage.py makemigrations
-    py.exe .\manage.py migrate
-    ```
 
 # 3. 启动项目
 
 1. 安装Django：
     ```bash
     pip install django
+    ```
+2. 初始化数据库：
+    ```py
+    py .\manage.py makemigrations
+    py .\manage.py migrate
     ```
 2. 启动Django服务，先进入`bms`目录，然后执行：
     ```bash
